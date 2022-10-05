@@ -8,6 +8,14 @@
     <artifactId>common</artifactId>
     <version>0.1.0</version>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/itwasne/common</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
