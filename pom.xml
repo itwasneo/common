@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itwasneo</groupId>
+    <artifactId>common</artifactId>
+    <version>0.1.0</version>
+
+    <properties>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <activej-inject-version>5.4.3</activej-inject-version>
+        <activej-common-version>5.4.3</activej-common-version>
+        <activej-config-version>5.4.3</activej-config-version>
+        <jackson-databind-version>2.13.4</jackson-databind-version>
+        <jackson-datatype-jsr310-version>2.13.4</jackson-datatype-jsr310-version>
+        <jedis-version>4.2.3</jedis-version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>io.activej</groupId>
+            <artifactId>activej-inject</artifactId>
+            <version>${activej-inject-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.activej</groupId>
+            <artifactId>activej-common</artifactId>
+            <version>${activej-common-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.activej</groupId>
+            <artifactId>activej-config</artifactId>
+            <version>${activej-config-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis-version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson-datatype-jsr310-version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
