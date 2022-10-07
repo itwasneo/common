@@ -1,0 +1,48 @@
+version: '3.1'
+services:
+
+  # app:
+  #   container_name: app
+  #   image: itwasneo/dependency-injection-revisited:latest
+  #   ports:
+  #     - 8080:8080
+  #   depends_on:
+  #     - redis-master
+  #     - mongo
+
+  redis-master:
+    container_name: redis-master
+    image: redis:latest
+    command: redis-server --port 6379
+    ports:
+      - 6379:6379
+    volumes:
+      - .:/app
+
+  redis-slave:
+    container_name: redis-slave
+    image: redis:latest
+    command: redis-server --slaveof redis-master 6379
+    volumes:
+      - .:/app
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/

@@ -9,7 +9,7 @@ import io.activej.inject.Key;
 import io.activej.inject.module.ModuleBuilder;
 import redis.clients.jedis.JedisPooled;
 
-public class CommonProvider {
+public class RedisProvider {
 
 	private static final Injector injector = Injector.of(ModuleBuilder.create()
 			// Config
@@ -40,5 +40,5 @@ public class CommonProvider {
 		return injector.getInstance(key);
 	}
 
-	private CommonProvider() {}
+	private RedisProvider() {}
 }

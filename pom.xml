@@ -6,7 +6,7 @@
 
     <groupId>com.itwasneo</groupId>
     <artifactId>common</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
 
     <distributionManagement>
         <repository>
@@ -17,8 +17,8 @@
     </distributionManagement>
 
     <properties>
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <maven.shade.plugin.version>3.4.0</maven.shade.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,9 +26,11 @@
         <activej-inject-version>5.4.3</activej-inject-version>
         <activej-common-version>5.4.3</activej-common-version>
         <activej-config-version>5.4.3</activej-config-version>
+        <activej-types-version>5.4.3</activej-types-version>
         <jackson-databind-version>2.13.4</jackson-databind-version>
         <jackson-datatype-jsr310-version>2.13.4</jackson-datatype-jsr310-version>
         <jedis-version>4.2.3</jedis-version>
+        <mongodb-driver-sync-version>4.7.1</mongodb-driver-sync-version>
     </properties>
 
     <dependencies>
@@ -52,6 +54,13 @@
         </dependency>
 
         <dependency>
+            <groupId>io.activej</groupId>
+            <artifactId>activej-types</artifactId>
+            <version>${activej-types-version}</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>${jedis-version}</version>
@@ -69,6 +78,13 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>${jackson-datatype-jsr310-version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>${mongodb-driver-sync-version}</version>
+        </dependency>
+
 
     </dependencies>
 
